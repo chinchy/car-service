@@ -1,0 +1,30 @@
+{% macro table(header, fields, data) -%}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                {% for col in header %}
+                    <th scope="col">{{ col }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    {% for field in fields %}
+                        {% if row[field] is sameas true %}
+                            <td>
+                                <img src="{{ url_for('static', filename='image/check-circle.svg') }}" alt="True">
+                            </td>
+                        {% elif row[field] is sameas false %}
+                            <td>
+                                <img src="{{ url_for('static', filename='image/x-circle.svg') }}" alt="False">
+                            </td>
+                        {% else %}
+                            <td>{{ row[field] }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{%- endmacro %}
