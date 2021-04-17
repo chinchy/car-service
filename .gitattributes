@@ -1,1 +1,1 @@
-app/static/lib/* linguist-vendored
+app/static/lib/* -linguist-vendored
