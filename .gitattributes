@@ -1,1 +1,1 @@
-app/static/lib/* linguist-vendored
+*.min.js linguist-vendored
