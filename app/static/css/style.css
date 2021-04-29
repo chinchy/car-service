@@ -1,0 +1,9 @@
+.action-col > a {
+    color: black;
+    text-decoration: none;
+}
+
+.bi-button {
+    width: 1.5em;
+    height: 1.5em;
+}

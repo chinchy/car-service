@@ -1,0 +1,7 @@
+{% extends "base.jinja2" %}
+{% from "form.jinja2" import render_form %}
+
+{% block content %}
+    <h4>Редактирование</h4>
+    {{ render_form(form, fields) }}
+{% endblock %}

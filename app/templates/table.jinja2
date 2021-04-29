@@ -5,6 +5,7 @@
                 {% for col in header %}
                     <th scope="col">{{ col }}</th>
                 {% endfor %}
+                <th class="action-col" scope="col">Действия</th>
             </tr>
         </thead>
         <tbody>
@@ -13,16 +14,25 @@
                     {% for field in fields %}
                         {% if row[field] is sameas true %}
                             <td>
-                                <img src="{{ url_for('static', filename='image/check-circle.svg') }}" alt="True">
+                                <i class="bi bi-check-circle"></i>
                             </td>
                         {% elif row[field] is sameas false %}
                             <td>
-                                <img src="{{ url_for('static', filename='image/x-circle.svg') }}" alt="False">
+                                <i class="bi bi-x-circle"></i>
                             </td>
                         {% else %}
                             <td>{{ row[field] }}</td>
                         {% endif %}
                     {% endfor %}
+                    <td class="action-col">
+                        <a href={{ url_for(".edit", model_id=row['id']) }}>
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                        &ensp;
+                        <a href={{ url_for(".delete", model_id=row['id']) }}>
+                            <i class="bi bi-trash"></i>
+                        </a>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>

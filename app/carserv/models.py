@@ -11,6 +11,9 @@ class Car(db.Model):
     mark = db.Column(db.String(20), comment='Марка')
     is_foreign = db.Column(db.Boolean, comment='Иномарка?')
 
+    def __str__(self):
+        return '{} ({})'.format(self.num, self.mark)
+
 
 class Master(db.Model):
 
@@ -18,6 +21,9 @@ class Master(db.Model):
 
     id = db.Column(db.Integer, comment='#', primary_key=True)
     name = db.Column(db.String(50), comment='ФИО')
+
+    def __str__(self):
+        return self.name
 
 
 class Service(db.Model):
@@ -29,6 +35,9 @@ class Service(db.Model):
     cost_our = db.Column(db.Numeric(18, 2), comment='Стоимость для отечественных')
     cost_foreign = db.Column(db.Numeric(18, 2), comment='Стоимость для импортных')
 
+    def __str__(self):
+        return self.name
+
 
 class Work(db.Model):
 
@@ -39,3 +48,7 @@ class Work(db.Model):
     master_id = db.Column(db.Integer, db.ForeignKey(Master.id), comment='Мастер')
     car_id = db.Column(db.Integer, db.ForeignKey(Car.id), comment='Автомобиль')
     service_id = db.Column(db.Integer, db.ForeignKey(Service.id), comment='Услуга')
+
+    master = db.relationship(Master)
+    car = db.relationship(Car)
+    service = db.relationship(Service)

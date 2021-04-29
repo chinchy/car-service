@@ -1,0 +1,19 @@
+{% macro render_form(form, fields) -%}
+    <form action="" method="post">
+        {{ form.csrf_token }}
+        {% for field in fields %}
+            <div class="form-group">
+                <label for="{{ field }}">{{ form[field].label }}</label>
+                {{ form[field](class_="form-control") }}
+            </div>
+        {% endfor %}
+        <div class="btn-toolbar d-flex justify-content-center" role="toolbar">
+            <div class="btn-group mr-2" role="group">
+                <button type="submit" class="btn btn-success">Сохранить</button>
+            </div>
+            <div class="btn-group mr-2" role="group">
+                <a class="btn btn-danger" href="{{ url_for(".index") }}" role="button">Отмена</a>
+            </div>
+        </div>
+    </form>
+{%- endmacro %}
