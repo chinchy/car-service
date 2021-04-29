@@ -13,7 +13,7 @@ def render_table_template(template, title, model, data):
                            data=data)
 
 
-def render_form_template(template, title, model, form):
+def render_form_template(template, title, form):
     fields = []
     for key, item in form._fields.items():
         if type(item) is not CSRFTokenField:

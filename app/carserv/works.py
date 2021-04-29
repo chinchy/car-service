@@ -47,7 +47,6 @@ def edit(model_id):
 
     return render_form_template('edit.html',
                                 title='Журнал работ',
-                                model=Work,
                                 form=form)
 
 
@@ -74,7 +73,6 @@ def create():
 
     return render_form_template('create.html',
                                 title='Журнал работ',
-                                model=Work,
                                 form=form)
 
 

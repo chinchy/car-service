@@ -42,7 +42,6 @@ def edit(model_id):
 
     return render_form_template('edit.html',
                                 title='Услуги',
-                                model=Service,
                                 form=form)
 
 
@@ -68,7 +67,6 @@ def create():
 
     return render_form_template('create.html',
                                 title='Услуги',
-                                model=Service,
                                 form=form)
 
 

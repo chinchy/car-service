@@ -49,7 +49,6 @@ def edit(model_id):
 
     return render_form_template('edit.html',
                                 title='Автомобили',
-                                model=Car,
                                 form=form)
 
 
@@ -76,7 +75,6 @@ def create():
 
     return render_form_template('create.html',
                                 title='Автомобили',
-                                model=Car,
                                 form=form)
 
 
