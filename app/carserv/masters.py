@@ -9,7 +9,7 @@ bp = Blueprint('masters', __name__)
 
 @bp.route('/', methods=['GET', 'POST'])
 def index():
-    return render_table_template('base.html',
+    return render_table_template('index.html',
                                  title='Мастера',
                                  model=Master,
                                  data=db.session.query(Master).order_by(Master.id).all())

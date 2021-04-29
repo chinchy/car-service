@@ -1,7 +1,7 @@
+from flask import Flask
+
 from .db import db
 from .carserv import cars_bp, masters_bp, services_bp, works_bp
-
-from flask import Flask
 
 
 def create_app():
