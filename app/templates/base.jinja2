@@ -27,6 +27,15 @@
                             <a class="nav-link" href="/{{ item }}">{{ name }}</a>
                         </li>
                     {% endfor %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Отчёты
+                        </a>
+                        <div class="dropdown-menu navbar-dark">
+                            <a class="dropdown-item" href="{{ url_for("reports.all_works") }}">История работ</a>
+                            <a class="dropdown-item" href="{{ url_for("reports.monthly_profit") }}">Прибыль по месяцам</a>
+                        </div>
+                    </li>
                 </ul>
                 <span class="navbar-text">
                     <a href="#">

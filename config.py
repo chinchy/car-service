@@ -6,3 +6,5 @@ class Base(object):
     SQLALCHEMY_DATABASE_URI = 'postgresql://ilya@localhost/carserv'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     FLASK_APP = app
+
+    REPORT_FOLDER = '/srv/carserv/export'

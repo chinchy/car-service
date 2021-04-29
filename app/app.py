@@ -1,7 +1,7 @@
 from flask import Flask
 
 from .db import db
-from .carserv import cars_bp, masters_bp, services_bp, works_bp
+from .carserv import cars_bp, masters_bp, services_bp, works_bp, reports_bp
 
 
 def create_app():
@@ -15,5 +15,6 @@ def create_app():
     app.register_blueprint(masters_bp, url_prefix='/masters')
     app.register_blueprint(services_bp, url_prefix='/services')
     app.register_blueprint(works_bp, url_prefix='/works')
+    app.register_blueprint(reports_bp, url_prefix='/reports')
 
     return app
